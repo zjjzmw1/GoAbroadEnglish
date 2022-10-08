@@ -60,6 +60,8 @@
 		BD2698DE28F11B0A008BBB78 /* UITextField+XMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2698AD28F11B0A008BBB78 /* UITextField+XMTool.m */; };
 		BD2698DF28F11B0A008BBB78 /* XMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2698B028F11B0A008BBB78 /* XMTool.m */; };
 		BD2698E428F11D85008BBB78 /* DemoBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2698E228F11D85008BBB78 /* DemoBaseVC.m */; };
+		BD2698EA28F12344008BBB78 /* NewMineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2698E928F12344008BBB78 /* NewMineVC.m */; };
+		BD2698ED28F12367008BBB78 /* StudyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2698EC28F12367008BBB78 /* StudyVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,6 +172,10 @@
 		BD2698E028F11C34008BBB78 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		BD2698E228F11D85008BBB78 /* DemoBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBaseVC.m; sourceTree = "<group>"; };
 		BD2698E328F11D85008BBB78 /* DemoBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBaseVC.h; sourceTree = "<group>"; };
+		BD2698E828F12344008BBB78 /* NewMineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewMineVC.h; sourceTree = "<group>"; };
+		BD2698E928F12344008BBB78 /* NewMineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewMineVC.m; sourceTree = "<group>"; };
+		BD2698EB28F12367008BBB78 /* StudyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyVC.h; sourceTree = "<group>"; };
+		BD2698EC28F12367008BBB78 /* StudyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,9 +210,7 @@
 			children = (
 				BD26981528F11AC2008BBB78 /* AppDelegate.h */,
 				BD26981628F11AC2008BBB78 /* AppDelegate.m */,
-				BD26981B28F11AC2008BBB78 /* ViewController.h */,
-				BD26981C28F11AC2008BBB78 /* ViewController.m */,
-				BD2698E128F11D85008BBB78 /* DemoBaseVC */,
+				BD2698E528F122D0008BBB78 /* Moudle */,
 				BD26982E28F11B09008BBB78 /* XMUITool(UI工具箱) */,
 				BD26981E28F11AC2008BBB78 /* Main.storyboard */,
 				BD26982128F11AC3008BBB78 /* Assets.xcassets */,
@@ -618,10 +622,40 @@
 		BD2698E128F11D85008BBB78 /* DemoBaseVC */ = {
 			isa = PBXGroup;
 			children = (
-				BD2698E228F11D85008BBB78 /* DemoBaseVC.m */,
 				BD2698E328F11D85008BBB78 /* DemoBaseVC.h */,
+				BD2698E228F11D85008BBB78 /* DemoBaseVC.m */,
 			);
 			path = DemoBaseVC;
+			sourceTree = "<group>";
+		};
+		BD2698E528F122D0008BBB78 /* Moudle */ = {
+			isa = PBXGroup;
+			children = (
+				BD26981B28F11AC2008BBB78 /* ViewController.h */,
+				BD26981C28F11AC2008BBB78 /* ViewController.m */,
+				BD2698E728F1231C008BBB78 /* 我的 */,
+				BD2698E628F122EA008BBB78 /* 收藏 */,
+				BD2698E128F11D85008BBB78 /* DemoBaseVC */,
+			);
+			path = Moudle;
+			sourceTree = "<group>";
+		};
+		BD2698E628F122EA008BBB78 /* 收藏 */ = {
+			isa = PBXGroup;
+			children = (
+				BD2698EB28F12367008BBB78 /* StudyVC.h */,
+				BD2698EC28F12367008BBB78 /* StudyVC.m */,
+			);
+			path = "收藏";
+			sourceTree = "<group>";
+		};
+		BD2698E728F1231C008BBB78 /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+				BD2698E828F12344008BBB78 /* NewMineVC.h */,
+				BD2698E928F12344008BBB78 /* NewMineVC.m */,
+			);
+			path = "我的";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -697,6 +731,8 @@
 			files = (
 				BD2698CF28F11B0A008BBB78 /* XMAlertView.m in Sources */,
 				BD2698D428F11B0A008BBB78 /* NSString+XMValid.m in Sources */,
+				BD2698ED28F12367008BBB78 /* StudyVC.m in Sources */,
+				BD2698EA28F12344008BBB78 /* NewMineVC.m in Sources */,
 				BD2698D528F11B0A008BBB78 /* NSString+XMTool.m in Sources */,
 				BD2698C928F11B0A008BBB78 /* XMSignView.m in Sources */,
 				BD2698CD28F11B0A008BBB78 /* XMEmptyView.m in Sources */,

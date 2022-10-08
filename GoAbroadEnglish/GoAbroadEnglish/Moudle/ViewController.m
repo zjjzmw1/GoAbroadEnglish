@@ -23,18 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
-    [self.customNaviView setTitleStr:@"自定义导航栏"];
-    
-    [self.customNaviView setBackBtnImage:nil title:@"显示"];
-    [self.customNaviView setRightBtnImage:nil title:@"隐藏"];
-    [self.customNaviView setBackBlock:^{
-        [[XMTabBarVC defaultManager] showPointMarkIndex:2];
-    }];
-    [self.customNaviView setRightBlock:^{
-        [[XMTabBarVC defaultManager] hideMarkIndex:2];
-        [[XMTabBarVC defaultManager] hideMarkIndex:1];
-    }];
-    
+    [self.customNaviView setTitleStr:@"出国必备短语"];
+        
     self.dataArr = [NSMutableArray arrayWithArray:@[@"大鱼吃小鱼",@"XMTool",@"XMToast",@"XMSortBarView",@"UILabel",@"UIButton",@"XMPopMenu",@"UITextField",@"XMEmptyView",@"XMNoDataEmptyView",@"XMTextView",@"UIView",@"UIImage",@"XMAlertView",@"XMSignView",@"ProgressView",@"XMCircleProgressView",@"XMTimer",@"XMImageLabelView",@"SPPageMenu",@"DemoCollectionVC",@"DemoRedPointVC",@"OrderListAlertView",@"XMDatePickerView"]];
     self.tableView = [UITableView instanceWithType:UITableViewStylePlain];
     [self.view addSubview:self.tableView];

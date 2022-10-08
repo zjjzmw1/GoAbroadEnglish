@@ -120,11 +120,11 @@
 }
 /// 初始化tabbar的几个页面
 - (void)initTabbarVC {
-    NSMutableArray *controllerArray = @[@"ViewController",@"CourseCategoryVC",@"StudyVC",@"ShopVC",@"NewMineVC"].mutableCopy;
-    NSArray * titleArray = @[NSLocalizedString(@"首页", nil),NSLocalizedString(@"分类", nil),NSLocalizedString(@"学习", nil), NSLocalizedString(@"商城", nil),NSLocalizedString(@"我的", nil)];
-    NSArray *imageArray= @[@"tabbar_1",@"tabbar_2",@"tabbar_3",@"tabbar_3",@"tabbar_4"];
+    NSMutableArray *controllerArray = @[@"ViewController",@"StudyVC",@"NewMineVC"].mutableCopy;
+    NSArray * titleArray = @[NSLocalizedString(@"首页", nil),NSLocalizedString(@"学习", nil),NSLocalizedString(@"我的", nil)];
+    NSArray *imageArray= @[@"tabbar_1",@"tabbar_3",@"tabbar_4"];
     //选中图片数组
-    NSArray *selImageArray = @[@"tabbar_1_s",@"tabbar_2_s",@"tabbar_3_s",@"tabbar_3_s",@"tabbar_4_s"];
+    NSArray *selImageArray = @[@"tabbar_1_s",@"tabbar_3_s",@"tabbar_4_s"];
     //初始化(height:最小高度为49.0,当传nil 或<49.0时均按49.0处理)
     [self initWithControllerArray:controllerArray titleArray:titleArray imageArray:imageArray selImageArray:selImageArray height:kTabBarH_XM];
     [self initTabBar];
