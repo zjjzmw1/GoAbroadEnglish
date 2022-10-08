@@ -10,6 +10,7 @@
 #import "XMSizeMacro.h"
 #import "XMToast.h"
 #import "XMTabBarVC.h"
+#import "XMSoundManager.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -25,7 +26,7 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
     [self.customNaviView setTitleStr:@"出国必备短语"];
         
-    self.dataArr = [NSMutableArray arrayWithArray:@[@"大鱼吃小鱼",@"XMTool",@"XMToast",@"XMSortBarView",@"UILabel",@"UIButton",@"XMPopMenu",@"UITextField",@"XMEmptyView",@"XMNoDataEmptyView",@"XMTextView",@"UIView",@"UIImage",@"XMAlertView",@"XMSignView",@"ProgressView",@"XMCircleProgressView",@"XMTimer",@"XMImageLabelView",@"SPPageMenu",@"DemoCollectionVC",@"DemoRedPointVC",@"OrderListAlertView",@"XMDatePickerView"]];
+    self.dataArr = [NSMutableArray arrayWithArray:@[@"Help yourself.",@"Please eat up. Take your time.",@"Do you want anymore?",@" It’s your turn.",@"What’s on tonight?",@"Keep on trying.",@"Which one will you choose?"]];
     self.tableView = [UITableView instanceWithType:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
     self.tableView.delegate = self;
@@ -43,7 +44,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 50;
+    return 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -59,96 +60,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    UIViewController *vc;
-    NSString *vcString;
-    if (self.dataArr.count > indexPath.row) {
-        vcString = self.dataArr[indexPath.row];
-    }
 
-    if ([vcString isEqualToString:@"大鱼吃小鱼"]) {
-        vc = [NSClassFromString(@"BigEatSmallVC") new];
-    }
-    if ([vcString isEqualToString:@"XMToast"]) {
-        vc = [self getViewControllerWith:@"DemoToastVC"];
-    }
-    if ([vcString isEqualToString:@"XMSortBarView"]) {
-        vc = [self getViewControllerWith:@"DemoSortBarVC"];
-    }
-    if ([vcString isEqualToString:@"UILabel"]) {
-        vc = [self getViewControllerWith:@"DemoLabelVC"];
-    }
-    if ([vcString isEqualToString:@"XMPopMenu"]) {
-        vc = [self getViewControllerWith:@"DemoPopMenuVC"];
-    }
-    if ([vcString isEqualToString:@"UIButton"]) {
-        vc = [self getViewControllerWith:@"DemoButtonVC"];
-    }
-    if ([vcString isEqualToString:@"UITextField"]) {
-        vc = [self getViewControllerWith:@"DemoTextFieldVC"];
-    }
-    if ([vcString isEqualToString:@"XMEmptyView"]) {
-        vc = [self getViewControllerWith:@"DemoEmptyVC"];
-    }
-    if ([vcString isEqualToString:@"XMTextView"]) {
-        vc = [self getViewControllerWith:@"DemoTextViewVC"];
-    }
-    if ([vcString isEqualToString:@"UIView"]) {
-        vc = [self getViewControllerWith:@"DemoViewVC"];
-    }
-    if ([vcString isEqualToString:@"UIImage"]) {
-        vc = [self getViewControllerWith:@"DemoImageVC"];
-    }
-    if ([vcString isEqualToString:@"XMAlertView"]) {
-        vc = [self getViewControllerWith:@"DemoAlertVC"];
-    }
-    if ([vcString isEqualToString:@"XMSignView"]) {
-        vc = [self getViewControllerWith:@"DemoSignVC"];
-    }
-    if ([vcString isEqualToString:@"XMTool"]) {
-        vc = [self getViewControllerWith:@"DemoToolVC"];
-    }
-    if ([vcString isEqualToString:@"ProgressView"]) {
-        vc = [self getViewControllerWith:@"DemoUploadProgressVC"];
-    }
-    if ([vcString isEqualToString:@"XMCircleProgressView"]) {
-        vc = [self getViewControllerWith:@"DemoCircleProgressVC"];
-    }
-    if ([vcString isEqualToString:@"XMTimer"]) {
-        vc = [self getViewControllerWith:@"DemoTimerVC"];
-    }
-    if ([vcString isEqualToString:@"XMImageLabelView"]) {
-        vc = [self getViewControllerWith:@"DemoImageLabelVC"];
-    }
-    if ([vcString isEqualToString:@"SPPageMenu"]) {
-        vc = [self getViewControllerWith:@"DemoPageMenuVC"];
-    }
-    if ([vcString isEqualToString:@"DemoCollectionVC"]) {
-        vc = [self getViewControllerWith:@"DemoCollectionVC"];
-    }
-    if ([vcString isEqualToString:@"DemoRedPointVC"]) {
-        vc = [self getViewControllerWith:@"DemoRedPointVC"];
-    }
-    if ([vcString isEqualToString:@"XMNoDataEmptyView"]) {
-        vc = [self getViewControllerWith:@"DemoNoDataEmptyVC"];
-    }
-    if ([vcString isEqualToString:@"OrderListAlertView"]) {
-        vc = [self getViewControllerWith:@"DemoOrderListAlertViewVC"];
-    }
-    if ([vcString isEqualToString:@"XMDatePickerView"]) {
-        vc = [self getViewControllerWith:@"DemoDatePickerVC"];
+    if (indexPath.row < self.dataArr.count) {
+        NSString *str = self.dataArr[indexPath.row];
+        [XMSoundManager playText:str];
     }
     
-    [[XMTabBarVC defaultManager] showBadgeMark:54 index:1];
-
-    
-    [self.navigationController pushViewController:vc animated:YES];
 }
-
-/// 根据字符串返回 class 类，省去了导入头文件了
-- (UIViewController *)getViewControllerWith:(NSString *)classString {
-    return [[NSClassFromString(classString) alloc] init];
-}
-
 
 
 @end

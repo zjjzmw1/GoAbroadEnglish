@@ -62,6 +62,7 @@
 		BD2698E428F11D85008BBB78 /* DemoBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2698E228F11D85008BBB78 /* DemoBaseVC.m */; };
 		BD2698EA28F12344008BBB78 /* NewMineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2698E928F12344008BBB78 /* NewMineVC.m */; };
 		BD2698ED28F12367008BBB78 /* StudyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2698EC28F12367008BBB78 /* StudyVC.m */; };
+		BD2698F128F129B3008BBB78 /* XMSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2698F028F129B3008BBB78 /* XMSoundManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,6 +177,8 @@
 		BD2698E928F12344008BBB78 /* NewMineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewMineVC.m; sourceTree = "<group>"; };
 		BD2698EB28F12367008BBB78 /* StudyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyVC.h; sourceTree = "<group>"; };
 		BD2698EC28F12367008BBB78 /* StudyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyVC.m; sourceTree = "<group>"; };
+		BD2698EF28F129B3008BBB78 /* XMSoundManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMSoundManager.h; sourceTree = "<group>"; };
+		BD2698F028F129B3008BBB78 /* XMSoundManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMSoundManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +228,7 @@
 		BD26982E28F11B09008BBB78 /* XMUITool(UI工具箱) */ = {
 			isa = PBXGroup;
 			children = (
+				BD2698EE28F1296A008BBB78 /* XMSoundManager */,
 				BD26982F28F11B09008BBB78 /* UIImage */,
 				BD26983228F11B09008BBB78 /* XMSortBarView */,
 				BD26983528F11B09008BBB78 /* UILabel */,
@@ -613,8 +617,8 @@
 			isa = PBXGroup;
 			children = (
 				BD2698AF28F11B0A008BBB78 /* XMToolMacro.h */,
-				BD2698B028F11B0A008BBB78 /* XMTool.m */,
 				BD2698B128F11B0A008BBB78 /* XMTool.h */,
+				BD2698B028F11B0A008BBB78 /* XMTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -656,6 +660,15 @@
 				BD2698E928F12344008BBB78 /* NewMineVC.m */,
 			);
 			path = "我的";
+			sourceTree = "<group>";
+		};
+		BD2698EE28F1296A008BBB78 /* XMSoundManager */ = {
+			isa = PBXGroup;
+			children = (
+				BD2698EF28F129B3008BBB78 /* XMSoundManager.h */,
+				BD2698F028F129B3008BBB78 /* XMSoundManager.m */,
+			);
+			path = XMSoundManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -777,6 +790,7 @@
 				BD26982828F11AC3008BBB78 /* main.m in Sources */,
 				BD2698D128F11B0A008BBB78 /* XMLocationTrans.m in Sources */,
 				BD2698D828F11B0A008BBB78 /* NSDate+XMTool.m in Sources */,
+				BD2698F128F129B3008BBB78 /* XMSoundManager.m in Sources */,
 				BD2698BC28F11B0A008BBB78 /* XMPopMenu.m in Sources */,
 				BD2698C128F11B0A008BBB78 /* OrderListCell.m in Sources */,
 				BD2698C428F11B0A008BBB78 /* XMTabBarVC.m in Sources */,
