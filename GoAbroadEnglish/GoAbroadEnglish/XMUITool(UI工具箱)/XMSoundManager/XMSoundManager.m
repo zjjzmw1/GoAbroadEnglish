@@ -28,7 +28,7 @@
 
 #pragma mark - 播放文字
 /// 播放文字
-+ (void)playText:(NSString *)text {
++ (void)playText:(NSString *)text voiceLanguage:(nullable NSString *)voiceLanguage {
     if (![XMSoundManager sharedInstance].speechSyn) {
         [XMSoundManager sharedInstance].speechSyn = [[AVSpeechSynthesizer alloc]init];
     }
@@ -40,7 +40,12 @@
     [[XMSoundManager sharedInstance].speechSyn stopSpeakingAtBoundary:AVSpeechBoundaryImmediate]; // Immediate 立即暂停
     
     [XMSoundManager sharedInstance].speechUtter = [AVSpeechUtterance speechUtteranceWithString:text];
-    [XMSoundManager sharedInstance].speechUtter.voice = [AVSpeechSynthesisVoice voiceWithLanguage: @"en"];  //语言
+    [XMSoundManager sharedInstance].speechUtter.voice = [AVSpeechSynthesisVoice voiceWithLanguage: @"en-US"];  // 女 英语 -- 美国
+    [XMSoundManager sharedInstance].speechUtter.voice = [AVSpeechSynthesisVoice voiceWithLanguage: @"en-GB"];  // 男 英语 -- 英国
+    if (voiceLanguage.length > 0) {
+        [XMSoundManager sharedInstance].speechUtter.voice = [AVSpeechSynthesisVoice voiceWithLanguage: voiceLanguage];
+    }
+    NSLog(@"===%@",[XMSoundManager sharedInstance].speechUtter.voice);
     [XMSoundManager sharedInstance].speechUtter.rate = 0.5;                     //语速 最小为0.0，最大为1.0
     [XMSoundManager sharedInstance].speechUtter.pitchMultiplier = 1;       //0.5-2.0之间
     [XMSoundManager sharedInstance].speechUtter.volume = 1;             //0.0-1.0之间

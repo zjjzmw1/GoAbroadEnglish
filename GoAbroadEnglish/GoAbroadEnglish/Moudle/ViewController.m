@@ -63,7 +63,11 @@
 
     if (indexPath.row < self.dataArr.count) {
         NSString *str = self.dataArr[indexPath.row];
-        [XMSoundManager playText:str];
+        if (indexPath.row % 2 == 0) {
+            [XMSoundManager playText:str voiceLanguage:nil];
+        } else {
+            [XMSoundManager playText:str voiceLanguage:@"en-US"];
+        }
     }
     
 }

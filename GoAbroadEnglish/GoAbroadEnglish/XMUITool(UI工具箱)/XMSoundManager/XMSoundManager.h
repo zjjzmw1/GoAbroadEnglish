@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface XMSoundManager : NSObject
 
 /// 播放文字
-+ (void)playText:(NSString *)text;
++ (void)playText:(NSString *)text voiceLanguage:(nullable NSString *)voiceLanguage;
 
 @end
 
