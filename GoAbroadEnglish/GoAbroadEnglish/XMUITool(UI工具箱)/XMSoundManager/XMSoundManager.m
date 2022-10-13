@@ -6,12 +6,9 @@
 //
 
 #import "XMSoundManager.h"
-#import <AVFoundation/AVFoundation.h>   // 播放文字需要
 
 @interface XMSoundManager()
 
-@property (nonatomic, strong) AVSpeechSynthesizer   *speechSyn;
-@property (nonatomic, strong) AVSpeechUtterance     *speechUtter;
 
 @end
 
@@ -28,14 +25,14 @@
 
 #pragma mark - 播放文字
 /// 播放文字
-+ (void)playText:(NSString *)text voiceLanguage:(nullable NSString *)voiceLanguage {
++ (void)playText:(NSString *)text voiceLanguage:(nullable NSString *)voiceLanguage row:(NSInteger)row {
     if (![XMSoundManager sharedInstance].speechSyn) {
         [XMSoundManager sharedInstance].speechSyn = [[AVSpeechSynthesizer alloc]init];
     }
     if (![XMSoundManager sharedInstance].speechUtter) {
         [XMSoundManager sharedInstance].speechUtter = [[AVSpeechUtterance alloc]init];
     }
-    
+    [XMSoundManager sharedInstance].currentRow = row;
     // 先暂停目前正在播放的
     [[XMSoundManager sharedInstance].speechSyn stopSpeakingAtBoundary:AVSpeechBoundaryImmediate]; // Immediate 立即暂停
     

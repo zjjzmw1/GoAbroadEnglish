@@ -63,6 +63,7 @@
 		BD2698EA28F12344008BBB78 /* NewMineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2698E928F12344008BBB78 /* NewMineVC.m */; };
 		BD2698ED28F12367008BBB78 /* StudyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2698EC28F12367008BBB78 /* StudyVC.m */; };
 		BD2698F128F129B3008BBB78 /* XMSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2698F028F129B3008BBB78 /* XMSoundManager.m */; };
+		BDB4FA8C28F84FA70073DA12 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB4FA8B28F84FA70073DA12 /* HomeCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -179,6 +180,8 @@
 		BD2698EC28F12367008BBB78 /* StudyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyVC.m; sourceTree = "<group>"; };
 		BD2698EF28F129B3008BBB78 /* XMSoundManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMSoundManager.h; sourceTree = "<group>"; };
 		BD2698F028F129B3008BBB78 /* XMSoundManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMSoundManager.m; sourceTree = "<group>"; };
+		BDB4FA8A28F84FA70073DA12 /* HomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
+		BDB4FA8B28F84FA70073DA12 /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -637,6 +640,8 @@
 			children = (
 				BD26981B28F11AC2008BBB78 /* ViewController.h */,
 				BD26981C28F11AC2008BBB78 /* ViewController.m */,
+				BDB4FA8A28F84FA70073DA12 /* HomeCell.h */,
+				BDB4FA8B28F84FA70073DA12 /* HomeCell.m */,
 				BD2698E728F1231C008BBB78 /* 我的 */,
 				BD2698E628F122EA008BBB78 /* 收藏 */,
 				BD2698E128F11D85008BBB78 /* DemoBaseVC */,
@@ -742,6 +747,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDB4FA8C28F84FA70073DA12 /* HomeCell.m in Sources */,
 				BD2698CF28F11B0A008BBB78 /* XMAlertView.m in Sources */,
 				BD2698D428F11B0A008BBB78 /* NSString+XMValid.m in Sources */,
 				BD2698ED28F12367008BBB78 /* StudyVC.m in Sources */,
