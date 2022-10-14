@@ -49,14 +49,14 @@
     self.leftBtn.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.height);
 //    self.rightBtn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 100, 0, 100, self.height);
     if (currentRow % 2 == 0) {
-        _leftBtn.backgroundColor = [UIColor getBlueColor_XM];
+        _leftBtn.backgroundColor = [UIColor whiteColor];
     } else {
         _leftBtn.backgroundColor = [UIColor getGreenColor_XM];
     }
     if (currentRow == selectRow) {
         _leftBtn.backgroundColor = [UIColor getRedColor_XM];
     }
-    _leftBtn.alpha = 0.15;
+    _leftBtn.alpha = 0.1;
     __weak typeof(self) wSelf = self;
     [self.leftBtn setTapActionWithBlock:^{
         if (wSelf.clickLeftBlock) {

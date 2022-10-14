@@ -47,10 +47,16 @@
     if (voiceLanguage.length > 0) {
         [XMSoundManager sharedInstance].speechUtter.voice = [AVSpeechSynthesisVoice voiceWithLanguage: voiceLanguage];
     }
+    if ([voiceLanguage hasPrefix:@"zh"]) { // 中文
+        [XMSoundManager sharedInstance].speechUtter.rate = 0.55;                     //语速 最小为0.0，最大为1.0
+    } else {
+        [XMSoundManager sharedInstance].speechUtter.rate = 0.45;                     //语速 最小为0.0，最大为1.0
+    }
     NSLog(@"===%@",[XMSoundManager sharedInstance].speechUtter.voice);
-    [XMSoundManager sharedInstance].speechUtter.rate = 0.45;                     //语速 最小为0.0，最大为1.0
-    [XMSoundManager sharedInstance].speechUtter.pitchMultiplier = 1.1;       //0.5-2.0之间
+    [XMSoundManager sharedInstance].speechUtter.pitchMultiplier = 0.9;       //0.5-2.0之间 语调
     [XMSoundManager sharedInstance].speechUtter.volume = 0.9;             //0.0-1.0之间
+    [XMSoundManager sharedInstance].speechUtter.preUtteranceDelay = 0.1; // 播放前停顿
+    [XMSoundManager sharedInstance].speechUtter.postUtteranceDelay = 0.1; // 播放后停顿
     [[XMSoundManager sharedInstance].speechSyn speakUtterance:[XMSoundManager sharedInstance].speechUtter];
 }
 

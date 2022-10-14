@@ -90,7 +90,7 @@
             lastStr = chineseArr[1];
         }
         self.isChinese = YES;
-        [XMSoundManager playText:lastStr voiceLanguage:@"zh-CN" row:newRow];
+        [XMSoundManager playText:lastStr voiceLanguage:@"zh" row:newRow];
     } else { // 播放下一行的英文
         [XMSoundManager sharedInstance].currentRow += 1;
         newRow = [XMSoundManager sharedInstance].currentRow;
