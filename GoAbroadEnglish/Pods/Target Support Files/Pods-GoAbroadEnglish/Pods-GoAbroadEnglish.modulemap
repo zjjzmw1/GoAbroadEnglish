@@ -1,0 +1,6 @@
+framework module Pods_GoAbroadEnglish {
+  umbrella header "Pods-GoAbroadEnglish-umbrella.h"
+
+  export *
+  module * { export * }
+}

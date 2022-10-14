@@ -8,6 +8,7 @@
 #import "HomeCell.h"
 #import "UIView+XMTool.h"
 #import "UIColor+XMTool.h"
+#import <Masonry/Masonry.h>
 
 @interface HomeCell()
 
@@ -27,12 +28,22 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 100);
         [self.contentView addSubview:self.leftBtn];
         [self.contentView addSubview:self.titleLbl];
         [self.contentView addSubview:self.desLbl];
-//        [self.contentView addSubview:self.rightBtn];
-//        self.titleLbl.frame = CGRectMake(18, 12, [UIScreen mainScreen].bounds.size.width - 100, 20);
+        __weak typeof(self) wSelf = self;
+        [self.leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.top.bottom.equalTo(wSelf.contentView);
+        }];
+        [self.titleLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.equalTo(wSelf.contentView).inset(16);
+            make.top.equalTo(wSelf.contentView).offset(10);
+        }];
+        [self.desLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.equalTo(wSelf.contentView).inset(16);
+            make.top.equalTo(wSelf.titleLbl.mas_bottom).offset(10);
+            make.bottom.equalTo(wSelf.contentView).inset(10);
+        }];
     }
     return self;
 }
@@ -44,10 +55,6 @@
         self.titleLbl.text = titleArr[0];
         self.desLbl.text = titleArr[1];
     }
-    self.titleLbl.frame = CGRectMake(16, 0, [UIScreen mainScreen].bounds.size.width - 32, self.height/2.0);
-    self.desLbl.frame = CGRectMake(16, self.height/2.0, [UIScreen mainScreen].bounds.size.width - 32, self.height/2.0);
-    self.leftBtn.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.height);
-//    self.rightBtn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 100, 0, 100, self.height);
     if (currentRow % 2 == 0) {
         _leftBtn.backgroundColor = [UIColor whiteColor];
     } else {
@@ -63,11 +70,6 @@
             wSelf.clickLeftBlock();
         }
     }];
-//    [self.rightBtn setTapActionWithBlock:^{
-//        if (wSelf.clickRightBlock) {
-//            wSelf.clickRightBlock();
-//        }
-//    }];
 }
 
 #pragma mark - 懒加载
@@ -76,7 +78,7 @@
     if (!_titleLbl) {
         _titleLbl = [[UILabel alloc] init];
         _titleLbl.textColor = [UIColor blackColor];
-        _titleLbl.font = [UIFont systemFontOfSize:16];
+        _titleLbl.font = [UIFont systemFontOfSize:17];
         _titleLbl.textAlignment = NSTextAlignmentCenter;
         _titleLbl.numberOfLines = 0;
     }
@@ -86,7 +88,7 @@
     if (!_desLbl) {
         _desLbl = [[UILabel alloc] init];
         _desLbl.textColor = [UIColor blackColor];
-        _desLbl.font = [UIFont systemFontOfSize:15];
+        _desLbl.font = [UIFont systemFontOfSize:16];
         _desLbl.textAlignment = NSTextAlignmentCenter;
         _desLbl.numberOfLines = 0;
     }

@@ -30,13 +30,11 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
     [self.customNaviView setTitleStr:@"出国必备短语"];
     [XMSoundManager sharedInstance].currentRow = -1;
-    self.dataArr = [NSMutableArray arrayWithArray:@[@"The windows of that house are broken \n 那间屋子的窗户破了",@"He made a great many mistakes \n 他犯了许多错误",@"A square has four sides \n 正方形有四条边",@" Plastic is hard to break up \n 塑料很难分解",@"The story took place in an October in the 1980s. \n 这个故事发生在20世纪80年代一个10月。",@" I’d like a coffee and a chicken sandwich, sir \n 先生，我要一杯咖啡和一个鸡肉三明治",@"The new is to take the place of the old. \n 新事物最终会取代旧事物"]];
+    self.dataArr = [NSMutableArray arrayWithArray:@[@"The windows of that house are broken \n 那间屋子的窗户破了",@"He made a great many mistakes \n 他犯了许多错误",@"A square has four sides \n 正方形有四条边",@" Plastic is hard to break up \n 塑料很难分解",@"The story took place in an October in the 1980s. \n 这个故事发生在20世纪80年代一个10月。",@" I’d like a coffee and a chicken sandwich, sir \n 先生，我要一杯咖啡和一个鸡肉三明治",@"The new is to take the place of the old. \n 新事物最终会取代旧事物",@"There is a reason for every important thing that happens. \n 每件重要事情的发生都有原因"]];
     [self.view addSubview:self.tableView];
     self.tableView.frame = CGRectMake(0, kNaviStatusBarH_XM, kScreenWidth_XM, kScreenHeight_XM - kNaviStatusBarH_XM - kTabBarH_XM);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 100;
-    [self.tableView reloadData];
     [self.tableView reloadData];
 }
 
@@ -46,10 +44,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataArr.count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -117,7 +111,7 @@
 //        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _tableView.separatorColor = [UIColor lightTextColor];
-        _tableView.estimatedRowHeight = 0;
+        _tableView.estimatedRowHeight = 100; // 0的话，就是不自动布局
         _tableView.rowHeight = UITableViewAutomaticDimension;
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;

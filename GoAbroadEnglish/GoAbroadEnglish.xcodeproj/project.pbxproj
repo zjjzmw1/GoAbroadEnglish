@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27B41B15449DC8051249FB01 /* Pods_GoAbroadEnglish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D714A5DC7DC5853D6FA9E9B /* Pods_GoAbroadEnglish.framework */; };
 		BD26981728F11AC2008BBB78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD26981628F11AC2008BBB78 /* AppDelegate.m */; };
 		BD26981D28F11AC2008BBB78 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD26981C28F11AC2008BBB78 /* ViewController.m */; };
 		BD26982028F11AC2008BBB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD26981E28F11AC2008BBB78 /* Main.storyboard */; };
@@ -67,6 +68,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C54893FD4C0D6E8DC951C70 /* Pods-GoAbroadEnglish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoAbroadEnglish.debug.xcconfig"; path = "Target Support Files/Pods-GoAbroadEnglish/Pods-GoAbroadEnglish.debug.xcconfig"; sourceTree = "<group>"; };
+		4D714A5DC7DC5853D6FA9E9B /* Pods_GoAbroadEnglish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoAbroadEnglish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD26981228F11AC2008BBB78 /* GoAbroadEnglish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoAbroadEnglish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD26981528F11AC2008BBB78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BD26981628F11AC2008BBB78 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -182,6 +185,7 @@
 		BD2698F028F129B3008BBB78 /* XMSoundManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMSoundManager.m; sourceTree = "<group>"; };
 		BDB4FA8A28F84FA70073DA12 /* HomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
 		BDB4FA8B28F84FA70073DA12 /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
+		D623E5916CF49FF74D8C80E2 /* Pods-GoAbroadEnglish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoAbroadEnglish.release.xcconfig"; path = "Target Support Files/Pods-GoAbroadEnglish/Pods-GoAbroadEnglish.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,17 +193,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27B41B15449DC8051249FB01 /* Pods_GoAbroadEnglish.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CB0DCEA95891BCB69811E86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D714A5DC7DC5853D6FA9E9B /* Pods_GoAbroadEnglish.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C4C268B231511F558120309 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C54893FD4C0D6E8DC951C70 /* Pods-GoAbroadEnglish.debug.xcconfig */,
+				D623E5916CF49FF74D8C80E2 /* Pods-GoAbroadEnglish.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BD26980928F11AC1008BBB78 = {
 			isa = PBXGroup;
 			children = (
 				BD26981428F11AC2008BBB78 /* GoAbroadEnglish */,
 				BD26981328F11AC2008BBB78 /* Products */,
+				5C4C268B231511F558120309 /* Pods */,
+				3CB0DCEA95891BCB69811E86 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -683,9 +708,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD26982B28F11AC3008BBB78 /* Build configuration list for PBXNativeTarget "GoAbroadEnglish" */;
 			buildPhases = (
+				94EB8F4B97169C9FDF93C71F /* [CP] Check Pods Manifest.lock */,
 				BD26980E28F11AC2008BBB78 /* Sources */,
 				BD26980F28F11AC2008BBB78 /* Frameworks */,
 				BD26981028F11AC2008BBB78 /* Resources */,
+				AB717EDC023996A8A80F67E6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -741,6 +768,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		94EB8F4B97169C9FDF93C71F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoAbroadEnglish-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB717EDC023996A8A80F67E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoAbroadEnglish/Pods-GoAbroadEnglish-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoAbroadEnglish/Pods-GoAbroadEnglish-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoAbroadEnglish/Pods-GoAbroadEnglish-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BD26980E28F11AC2008BBB78 /* Sources */ = {
@@ -937,6 +1006,7 @@
 		};
 		BD26982C28F11AC3008BBB78 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C54893FD4C0D6E8DC951C70 /* Pods-GoAbroadEnglish.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -968,6 +1038,7 @@
 		};
 		BD26982D28F11AC3008BBB78 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D623E5916CF49FF74D8C80E2 /* Pods-GoAbroadEnglish.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
