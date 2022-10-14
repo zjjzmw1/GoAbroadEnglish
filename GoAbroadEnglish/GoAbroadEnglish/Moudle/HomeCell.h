@@ -6,10 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KSSideslipCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeCell : UITableViewCell
+@interface HomeCell : KSSideslipCell
 
 @property (nonatomic, copy) void (^clickLeftBlock) (void);
 //@property (nonatomic, copy) void (^clickRightBlock) (void);

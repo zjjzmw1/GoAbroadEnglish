@@ -14,7 +14,7 @@
 #import "HomeCell.h"
 #import <AVFoundation/AVFoundation.h>   // 播放文字需要
 
-@interface ViewController ()<UITableViewDelegate, UITableViewDataSource,AVSpeechSynthesizerDelegate>
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource,AVSpeechSynthesizerDelegate,KSSideslipCellDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UITableView       *tableView;
 @property (nonatomic, strong) NSMutableArray    *dataArr;
@@ -48,6 +48,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeCell"];
+    cell.delegate = self;
     if (self.dataArr.count > indexPath.row) {
         NSString *str = self.dataArr[indexPath.row];
         NSString *strEN = self.dataArr[indexPath.row];
@@ -132,6 +133,46 @@
     return _tableView;
 }
 
+#pragma mark - KSSideslipCellDelegate
+- (NSArray<KSSideslipCellAction *> *)sideslipCell:(KSSideslipCell *)sideslipCell editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    LYHomeCellModel *model = _dataArray[indexPath.row];
+    KSSideslipCellAction *action1 = [KSSideslipCellAction rowActionWithStyle:KSSideslipCellActionStyleNormal title:@"取消关注" handler:^(KSSideslipCellAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        NSLog(@"取消关注");
+        [sideslipCell hiddenAllSideslip];
+    }];
+    KSSideslipCellAction *action2 = [KSSideslipCellAction rowActionWithStyle:KSSideslipCellActionStyleDestructive title:@"删除" handler:^(KSSideslipCellAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        NSLog(@"点击删除");
+    }];
+    KSSideslipCellAction *action3 = [KSSideslipCellAction rowActionWithStyle:KSSideslipCellActionStyleNormal title:@"置顶" handler:^(KSSideslipCellAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        NSLog(@"置顶");
+        [sideslipCell hiddenAllSideslip];
+    }];
+    
+    NSArray *array = @[action1, action2, action3];
+    return array;
+}
 
+- (BOOL)sideslipCell:(KSSideslipCell *)sideslipCell canSideslipRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+
+
+- (UIView *)sideslipCell:(KSSideslipCell *)sideslipCell rowAtIndexPath:(NSIndexPath *)indexPath didSelectedAtIndex:(NSInteger)index {
+//    self.indexPath = indexPath;
+    UIButton * view =[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 135, 0)];
+    view.titleLabel.textAlignment = NSTextAlignmentCenter;
+    view.titleLabel.font = [UIFont systemFontOfSize:17];
+    [view setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [view setTitle:@"确认删除" forState:UIControlStateNormal];
+    view.backgroundColor = [UIColor redColor];
+    [view addTarget:self action:@selector(delBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    return view;
+}
+
+- (void)delBtnClick {
+//    [_dataArray removeObjectAtIndex:self.indexPath.row];
+//    [self.tableView deleteRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
 
 @end
