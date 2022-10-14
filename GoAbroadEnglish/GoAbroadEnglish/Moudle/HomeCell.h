@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HomeCell : UITableViewCell
 
 @property (nonatomic, copy) void (^clickLeftBlock) (void);
-@property (nonatomic, copy) void (^clickRightBlock) (void);
+//@property (nonatomic, copy) void (^clickRightBlock) (void);
 
 
 /// 刷新数据
