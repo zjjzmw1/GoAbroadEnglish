@@ -142,10 +142,10 @@
         cell.clickLeftBlock = ^{
             if (wSelf.isGirl) {
                 wSelf.isGirl = NO;
-                [XMSoundManager playText:strEN voiceLanguage:@"en-US" row:indexPath.row];
+                [XMSoundManager playText:strEN voiceLanguage:@"en-GB" row:indexPath.row];
             } else {
                 wSelf.isGirl = YES;
-                [XMSoundManager playText:strEN voiceLanguage:@"en-GB" row:indexPath.row];
+                [XMSoundManager playText:strEN voiceLanguage:@"en-US" row:indexPath.row];
             }
             [XMSoundManager sharedInstance].speechSyn.delegate = wSelf;
             [wSelf.tableView reloadData];
