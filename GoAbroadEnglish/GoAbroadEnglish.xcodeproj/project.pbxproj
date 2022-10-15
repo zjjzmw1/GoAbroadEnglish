@@ -69,6 +69,7 @@
 		BDD42D1628F986DB008B7CAE /* KSSideslipCellProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD42D1128F986DB008B7CAE /* KSSideslipCellProxy.m */; };
 		BDD42D1728F986DB008B7CAE /* KSSideslipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD42D1328F986DB008B7CAE /* KSSideslipCell.m */; };
 		BDD42D1A28FA2BD9008B7CAE /* StudyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD42D1928FA2BD9008B7CAE /* StudyCell.m */; };
+		BDD42D1E28FA51EF008B7CAE /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD42D1D28FA51EF008B7CAE /* UserManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -197,6 +198,8 @@
 		BDD42D1428F986DB008B7CAE /* KSSideslipCellProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSSideslipCellProxy.h; sourceTree = "<group>"; };
 		BDD42D1828FA2BD9008B7CAE /* StudyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyCell.h; sourceTree = "<group>"; };
 		BDD42D1928FA2BD9008B7CAE /* StudyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyCell.m; sourceTree = "<group>"; };
+		BDD42D1C28FA51EF008B7CAE /* UserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		BDD42D1D28FA51EF008B7CAE /* UserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		D623E5916CF49FF74D8C80E2 /* Pods-GoAbroadEnglish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoAbroadEnglish.release.xcconfig"; path = "Target Support Files/Pods-GoAbroadEnglish/Pods-GoAbroadEnglish.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -679,6 +682,7 @@
 				BD26981C28F11AC2008BBB78 /* ViewController.m */,
 				BDB4FA8A28F84FA70073DA12 /* HomeCell.h */,
 				BDB4FA8B28F84FA70073DA12 /* HomeCell.m */,
+				BDD42D1B28FA51CE008B7CAE /* 用户数据信息 */,
 				BD2698E728F1231C008BBB78 /* 我的 */,
 				BD2698E628F122EA008BBB78 /* 收藏 */,
 				BD2698E128F11D85008BBB78 /* DemoBaseVC */,
@@ -726,6 +730,15 @@
 				BDD42D1428F986DB008B7CAE /* KSSideslipCellProxy.h */,
 			);
 			path = LYSideslipCell;
+			sourceTree = "<group>";
+		};
+		BDD42D1B28FA51CE008B7CAE /* 用户数据信息 */ = {
+			isa = PBXGroup;
+			children = (
+				BDD42D1C28FA51EF008B7CAE /* UserManager.h */,
+				BDD42D1D28FA51EF008B7CAE /* UserManager.m */,
+			);
+			path = "用户数据信息";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -847,6 +860,7 @@
 				BD2698CF28F11B0A008BBB78 /* XMAlertView.m in Sources */,
 				BD2698D428F11B0A008BBB78 /* NSString+XMValid.m in Sources */,
 				BD2698ED28F12367008BBB78 /* StudyVC.m in Sources */,
+				BDD42D1E28FA51EF008B7CAE /* UserManager.m in Sources */,
 				BD2698EA28F12344008BBB78 /* NewMineVC.m in Sources */,
 				BD2698D528F11B0A008BBB78 /* NSString+XMTool.m in Sources */,
 				BDD42D1728F986DB008B7CAE /* KSSideslipCell.m in Sources */,

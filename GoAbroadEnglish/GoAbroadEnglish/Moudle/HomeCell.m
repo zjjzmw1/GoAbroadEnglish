@@ -57,9 +57,9 @@
         self.desLbl.text = titleArr[1];
     }
     if (currentRow % 2 == 0) {
-        _leftBtn.backgroundColor = [UIColor whiteColor];
+        self.contentView.backgroundColor = [UIColor whiteColor];
     } else {
-        _leftBtn.backgroundColor = [UIColor getGreenColor_XM];
+        self.contentView.backgroundColor = [UIColor getGreenColor_XM];
     }
     if (currentRow == selectRow) {
         _leftBtn.backgroundColor = [UIColor getRedColor_XM];
