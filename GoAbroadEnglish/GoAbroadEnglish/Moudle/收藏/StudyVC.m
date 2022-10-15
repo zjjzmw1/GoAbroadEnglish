@@ -45,7 +45,7 @@
     self.dataArr = [NSMutableArray arrayWithArray:@[@"The windows of that house are broken \n 那间屋子的窗户破了",@"He made a great many mistakes \n 他犯了许多错误",@"A square has four sides \n 正方形有四条边",@" Plastic is hard to break up \n 塑料很难分解",@"The story took place in an October in the 1980s. \n 这个故事发生在20世纪80年代一个10月。",@" I’d like a coffee and a chicken sandwich, sir \n 先生，我要一杯咖啡和一个鸡肉三明治",@"The new is to take the place of the old. \n 新事物最终会取代旧事物",@"There is a reason for every important thing that happens. \n 每件重要事情的发生都有原因"]];
 
     [self.view addSubview:self.tableView];
-    self.tableView.frame = CGRectMake(0, kNaviStatusBarH_XM, kScreenWidth_XM, kScreenWidth_XM - 50);
+    self.tableView.frame = CGRectMake(0, kNaviStatusBarH_XM, kScreenWidth_XM, kScreenWidth_XM - 180);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView reloadData];
@@ -56,12 +56,15 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.titleFlag = 0;
     UIPasteboard *paste = [UIPasteboard generalPasteboard];
     self.dataArr = [NSMutableArray array];
     if (paste.string.length > 0) {
         [self.dataArr addObject:paste.string];
     }
     [self.tableView reloadData];
+    
+    [self.customNaviView setTitleStr:[self getTitleStr]];
 }
 
 - (NSString *)getTitleStr {
@@ -78,7 +81,7 @@
     if (self.titleFlag == 4) {
         return @"1遍后展示中文"; // 蓝色
     }
-    return @""; // 蓝色
+    return @"请看中文"; // 蓝色
 }
 
 - (UIColor *)getColorTemp {
@@ -113,7 +116,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return kScreenWidth_XM - 50;
+    return kScreenWidth_XM - 180;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -122,6 +125,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     StudyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudyCell"];
+    if (self.titleFlag <= 1) {
+        cell.desLbl.alpha = 0.01;
+    }
     if (self.dataArr.count > indexPath.row) {
         NSString *str = self.dataArr[indexPath.row];
         NSString *strEN = self.dataArr[indexPath.row];
@@ -205,7 +211,8 @@
         // 不添加横线
 //        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        _tableView.separatorColor = [UIColor lightTextColor];
+        _tableView.separatorColor = [UIColor redColor];
+        _tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
         _tableView.estimatedRowHeight = 0; // 0的话，就是不自动布局
         _tableView.rowHeight = UITableViewAutomaticDimension;
         _tableView.estimatedSectionFooterHeight = 0;
@@ -226,48 +233,5 @@
     }
     return _tableView;
 }
-
-//#pragma mark - KSSideslipCellDelegate
-//- (NSArray<KSSideslipCellAction *> *)sideslipCell:(KSSideslipCell *)sideslipCell editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-////    LYHomeCellModel *model = _dataArray[indexPath.row];
-//    KSSideslipCellAction *action1 = [KSSideslipCellAction rowActionWithStyle:KSSideslipCellActionStyleNormal title:@"取消关注" handler:^(KSSideslipCellAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-//        NSLog(@"取消关注");
-//        [sideslipCell hiddenAllSideslip];
-//    }];
-//    KSSideslipCellAction *action2 = [KSSideslipCellAction rowActionWithStyle:KSSideslipCellActionStyleDestructive title:@"删除" handler:^(KSSideslipCellAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-//        NSLog(@"点击删除");
-//    }];
-//    KSSideslipCellAction *action3 = [KSSideslipCellAction rowActionWithStyle:KSSideslipCellActionStyleNormal title:@"置顶" handler:^(KSSideslipCellAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-//        NSLog(@"置顶");
-//        [sideslipCell hiddenAllSideslip];
-//    }];
-//
-//    NSArray *array = @[action1, action2, action3];
-//    return array;
-//}
-//
-//- (BOOL)sideslipCell:(KSSideslipCell *)sideslipCell canSideslipRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return YES;
-//}
-//
-//
-//
-//- (UIView *)sideslipCell:(KSSideslipCell *)sideslipCell rowAtIndexPath:(NSIndexPath *)indexPath didSelectedAtIndex:(NSInteger)index {
-////    self.indexPath = indexPath;
-//    UIButton * view =[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 135, 0)];
-//    view.titleLabel.textAlignment = NSTextAlignmentCenter;
-//    view.titleLabel.font = [UIFont systemFontOfSize:17];
-//    [view setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    [view setTitle:@"确认删除" forState:UIControlStateNormal];
-//    view.backgroundColor = [UIColor redColor];
-//    [view addTarget:self action:@selector(delBtnClick) forControlEvents:UIControlEventTouchUpInside];
-//    return view;
-//}
-//
-//- (void)delBtnClick {
-////    [_dataArray removeObjectAtIndex:self.indexPath.row];
-////    [self.tableView deleteRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//}
-//
 
 @end
