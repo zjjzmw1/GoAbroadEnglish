@@ -14,7 +14,6 @@
 
 /// 标题
 @property (nonatomic, strong) UILabel       *titleLbl;
-@property (nonatomic, strong) UILabel       *desLbl;
 /// 左边按钮
 @property (nonatomic, strong) UIButton      *leftBtn;
 
@@ -45,6 +44,7 @@
         }];
         self.backgroundColor = [UIColor clearColor];
         self.contentView.backgroundColor = [UIColor clearColor];
+        self.desLbl.alpha = 0.01;
     }
     return self;
 }

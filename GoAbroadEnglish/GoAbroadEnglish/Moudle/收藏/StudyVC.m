@@ -34,6 +34,10 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
     [self.customNaviView setTitleStr:@""];
     [self.customNaviView setRightBtnImage:nil title:@" "];
+    [self.customNaviView setBackBtnImage:nil title:@" "];
+    [self.customNaviView setBackBlock:^{
+        
+    }];
     [self.customNaviView setRightBlock:^{
         wSelf.view.backgroundColor = [wSelf getColorTemp];
     }];
@@ -128,7 +132,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    
+    StudyCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if (self.dataArr.count > indexPath.row) {
         NSString *str = self.dataArr[indexPath.row];
         NSString *strEN = self.dataArr[indexPath.row];
@@ -139,6 +143,7 @@
             strCH = titleArr[1];
         }
         [XMSoundManager playText:strCH voiceLanguage:@"zh-CN" row:indexPath.row];
+        cell.desLbl.alpha = 1.0;
         [XMSoundManager sharedInstance].speechSyn.delegate = self;
         [self.tableView reloadData];
     }

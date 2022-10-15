@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface StudyCell : UITableViewCell
 
+@property (nonatomic, strong) UILabel       *desLbl;
+
 @property (nonatomic, copy) void (^clickLeftBlock) (void);
 
 - (void)reloadData:(NSInteger)currentRow selectRow:(NSInteger)selectRow title:(NSString *)titleString;
