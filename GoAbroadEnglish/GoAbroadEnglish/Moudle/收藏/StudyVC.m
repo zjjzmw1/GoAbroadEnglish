@@ -23,6 +23,7 @@
 @property (nonatomic, assign) BOOL              isGirl;
 /// 获取颜色
 @property (nonatomic, assign) int               colorFlag;
+@property (nonatomic, assign) int               titleFlag;
 
 @end
 
@@ -32,7 +33,7 @@
     [super viewDidLoad];
     __weak typeof(self) wSelf = self;
     self.view.backgroundColor = [UIColor lightGrayColor];
-    [self.customNaviView setTitleStr:@""];
+    [self.customNaviView setTitleStr:[self getTitleStr]];
     [self.customNaviView setRightBtnImage:nil title:@" "];
     [self.customNaviView setBackBtnImage:nil title:@" "];
     [self.customNaviView setBackBlock:^{
@@ -61,6 +62,23 @@
         [self.dataArr addObject:paste.string];
     }
     [self.tableView reloadData];
+}
+
+- (NSString *)getTitleStr {
+    self.titleFlag += 1;
+    if (self.titleFlag == 1) {
+        return @"4遍后展示中文"; // 蓝色
+    }
+    if (self.titleFlag == 2) {
+        return @"3遍后展示中文"; // 蓝色
+    }
+    if (self.titleFlag == 3) {
+        return @"2遍后展示中文"; // 蓝色
+    }
+    if (self.titleFlag == 4) {
+        return @"1遍后展示中文"; // 蓝色
+    }
+    return @""; // 蓝色
 }
 
 - (UIColor *)getColorTemp {
@@ -125,6 +143,7 @@
             }
             [XMSoundManager sharedInstance].speechSyn.delegate = wSelf;
             [wSelf.tableView reloadData];
+            [wSelf.customNaviView setTitleStr:[self getTitleStr]];
         };
     }
     return cell;
@@ -146,6 +165,7 @@
         cell.desLbl.alpha = 1.0;
         [XMSoundManager sharedInstance].speechSyn.delegate = self;
         [self.tableView reloadData];
+        [self.customNaviView setTitleStr:[self getTitleStr]];
     }
 }
 
