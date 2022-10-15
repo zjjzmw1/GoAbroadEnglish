@@ -45,7 +45,7 @@
     self.dataArr = [NSMutableArray arrayWithArray:@[@"The windows of that house are broken \n 那间屋子的窗户破了",@"He made a great many mistakes \n 他犯了许多错误",@"A square has four sides \n 正方形有四条边",@" Plastic is hard to break up \n 塑料很难分解",@"The story took place in an October in the 1980s. \n 这个故事发生在20世纪80年代一个10月。",@" I’d like a coffee and a chicken sandwich, sir \n 先生，我要一杯咖啡和一个鸡肉三明治",@"The new is to take the place of the old. \n 新事物最终会取代旧事物",@"There is a reason for every important thing that happens. \n 每件重要事情的发生都有原因"]];
 
     [self.view addSubview:self.tableView];
-    self.tableView.frame = CGRectMake(0, kNaviStatusBarH_XM, kScreenWidth_XM, kScreenWidth_XM - 150);
+    self.tableView.frame = CGRectMake(0, kNaviStatusBarH_XM, kScreenWidth_XM, kScreenWidth_XM - 226);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView reloadData];
@@ -116,7 +116,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return kScreenWidth_XM - 150;
+    return kScreenWidth_XM - 226;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

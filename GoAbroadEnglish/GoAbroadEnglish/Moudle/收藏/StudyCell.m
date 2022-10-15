@@ -35,7 +35,7 @@
         }];
         [self.titleLbl mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(wSelf.contentView).inset(16);
-            make.top.equalTo(wSelf.contentView).offset(-10);
+            make.top.equalTo(wSelf.contentView).offset(0);
         }];
         [self.desLbl mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(wSelf.contentView).inset(16);
@@ -71,7 +71,7 @@
     if (!_titleLbl) {
         _titleLbl = [[UILabel alloc] init];
         _titleLbl.textColor = [UIColor blackColor];
-        _titleLbl.font = [UIFont boldSystemFontOfSize:26];
+        _titleLbl.font = [UIFont boldSystemFontOfSize:23];
         _titleLbl.textAlignment = NSTextAlignmentCenter;
         _titleLbl.numberOfLines = 0;
     }
@@ -81,7 +81,7 @@
     if (!_desLbl) {
         _desLbl = [[UILabel alloc] init];
         _desLbl.textColor = [UIColor blackColor];
-        _desLbl.font = [UIFont boldSystemFontOfSize:18];
+        _desLbl.font = [UIFont boldSystemFontOfSize:16];
         _desLbl.textAlignment = NSTextAlignmentCenter;
         _desLbl.numberOfLines = 0;
     }
