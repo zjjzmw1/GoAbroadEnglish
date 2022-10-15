@@ -41,7 +41,7 @@
     }
     NSArray *strArr = [str componentsSeparatedByString:@"\n"];
     if (strArr.count > 1) {
-        [[UserManager sharedInstance].englishArr addObject:str];
+        [[UserManager sharedInstance].englishArr insertObject:str atIndex:0];
     }
     [UserManager saveLocalEnglishArrToUserDefaults];
 }
