@@ -68,6 +68,7 @@
 		BDD42D1528F986DB008B7CAE /* KSSideslipContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD42D0F28F986DB008B7CAE /* KSSideslipContainerView.m */; };
 		BDD42D1628F986DB008B7CAE /* KSSideslipCellProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD42D1128F986DB008B7CAE /* KSSideslipCellProxy.m */; };
 		BDD42D1728F986DB008B7CAE /* KSSideslipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD42D1328F986DB008B7CAE /* KSSideslipCell.m */; };
+		BDD42D1A28FA2BD9008B7CAE /* StudyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD42D1928FA2BD9008B7CAE /* StudyCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -194,6 +195,8 @@
 		BDD42D1228F986DB008B7CAE /* KSSideslipContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSSideslipContainerView.h; sourceTree = "<group>"; };
 		BDD42D1328F986DB008B7CAE /* KSSideslipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSSideslipCell.m; sourceTree = "<group>"; };
 		BDD42D1428F986DB008B7CAE /* KSSideslipCellProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSSideslipCellProxy.h; sourceTree = "<group>"; };
+		BDD42D1828FA2BD9008B7CAE /* StudyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyCell.h; sourceTree = "<group>"; };
+		BDD42D1928FA2BD9008B7CAE /* StudyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyCell.m; sourceTree = "<group>"; };
 		D623E5916CF49FF74D8C80E2 /* Pods-GoAbroadEnglish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoAbroadEnglish.release.xcconfig"; path = "Target Support Files/Pods-GoAbroadEnglish/Pods-GoAbroadEnglish.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -688,6 +691,8 @@
 			children = (
 				BD2698EB28F12367008BBB78 /* StudyVC.h */,
 				BD2698EC28F12367008BBB78 /* StudyVC.m */,
+				BDD42D1828FA2BD9008B7CAE /* StudyCell.h */,
+				BDD42D1928FA2BD9008B7CAE /* StudyCell.m */,
 			);
 			path = "收藏";
 			sourceTree = "<group>";
@@ -892,6 +897,7 @@
 				BD2698D828F11B0A008BBB78 /* NSDate+XMTool.m in Sources */,
 				BD2698F128F129B3008BBB78 /* XMSoundManager.m in Sources */,
 				BD2698BC28F11B0A008BBB78 /* XMPopMenu.m in Sources */,
+				BDD42D1A28FA2BD9008B7CAE /* StudyCell.m in Sources */,
 				BD2698C128F11B0A008BBB78 /* OrderListCell.m in Sources */,
 				BD2698C428F11B0A008BBB78 /* XMTabBarVC.m in Sources */,
 			);

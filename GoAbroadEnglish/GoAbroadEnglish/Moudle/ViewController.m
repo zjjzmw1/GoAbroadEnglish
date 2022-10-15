@@ -59,20 +59,24 @@
             strCH = titleArr[1];
         }
         [cell reloadData:indexPath.row selectRow:[XMSoundManager sharedInstance].currentRow title:self.dataArr[indexPath.row]];
-        __weak typeof(self) wSelf = self;
-        cell.clickLeftBlock = ^{
-            wSelf.isChinese = NO;
-            [XMSoundManager sharedInstance].currentRow = indexPath.row;
-            [XMSoundManager playText:strEN voiceLanguage:@"en-US" row:indexPath.row];
-            [XMSoundManager sharedInstance].speechSyn.delegate = wSelf;
-            [wSelf.tableView reloadData];
-        };
+//        __weak typeof(self) wSelf = self;
+//        cell.clickLeftBlock = ^{
+//            wSelf.isChinese = NO;
+//            [XMSoundManager sharedInstance].currentRow = indexPath.row;
+//            [XMSoundManager playText:strEN voiceLanguage:@"en-US" row:indexPath.row];
+//            [XMSoundManager sharedInstance].speechSyn.delegate = wSelf;
+//            [wSelf.tableView reloadData];
+//        };
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    NSString *str = self.dataArr[indexPath.row];
+    UIPasteboard *paste = [UIPasteboard generalPasteboard];
+    paste.string = str;
+    [XMToast showTextToCenter:@"拷贝成功"];
 }
 
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance {
