@@ -70,7 +70,7 @@
 - (NSString *)getTitleStr {
     self.titleFlag += 1;
     if (self.titleFlag == 1) {
-        return @"4遍后展示中文"; // 蓝色
+        return @"3遍后展示中文"; // 蓝色
     }
     if (self.titleFlag == 2) {
         return @"3遍后展示中文"; // 蓝色
@@ -90,25 +90,28 @@
     } else {
         self.colorFlag += 1;
     }
+    UIColor *color = [UIColor whiteColor];
     if (self.colorFlag == 0) {
-        return [UIColor colorFromHexString:@"#68B4EC" alpha:0.25]; // 蓝色
+        color = [UIColor colorFromHexString:@"#68B4EC" alpha:0.25]; // 蓝色
     }
     if (self.colorFlag == 1) {
-        return [UIColor colorFromHexString:@"#F6C358" alpha:0.25]; // 黄色
+        color = [UIColor colorFromHexString:@"#F6C358" alpha:0.25]; // 黄色
     }
     if (self.colorFlag == 2) {
-        return [UIColor colorFromHexString:@"#e8320d" alpha:0.25]; // 红色
+        color = [UIColor colorFromHexString:@"#e8320d" alpha:0.25]; // 红色
     }
     if (self.colorFlag == 3) {
-        return [UIColor colorFromHexString:@"#7D5D9E" alpha:0.25]; // 紫色
+        color = [UIColor colorFromHexString:@"#7D5D9E" alpha:0.25]; // 紫色
     }
     if (self.colorFlag == 4) {
-        return [UIColor colorFromHexString:@"#61C355" alpha:0.25]; // 绿色
+        color = [UIColor colorFromHexString:@"#61C355" alpha:0.25]; // 绿色
     }
     if (self.colorFlag == 5) {
-        return [UIColor colorFromHexString:@"#35C277" alpha:0.25]; // 绿色2
+        color = [UIColor colorFromHexString:@"#35C277" alpha:0.25]; // 绿色2
     }
-    return [UIColor colorFromHexString:@"#35C277" alpha:0.25]; // 绿色2
+    self.customNaviView.backgroundColor = [UIColor clearColor];
+    [self.customNaviView showBottomLine:NO];
+    return color;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

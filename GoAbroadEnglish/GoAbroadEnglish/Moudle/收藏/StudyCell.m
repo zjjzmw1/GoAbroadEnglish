@@ -35,7 +35,7 @@
         }];
         [self.titleLbl mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(wSelf.contentView).inset(16);
-            make.top.equalTo(wSelf.contentView).offset(0);
+            make.top.equalTo(wSelf.contentView).offset(-15);
         }];
         [self.desLbl mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(wSelf.contentView).inset(16);
