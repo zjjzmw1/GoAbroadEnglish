@@ -56,7 +56,11 @@
         self.titleLbl.text = titleArr[0];
         self.desLbl.text = titleArr[1];
     }
-
+    NSArray *titleArr2 = [titleString componentsSeparatedByString:@"\n\n"];
+    if (titleArr2.count > 1) {
+        self.titleLbl.text = titleArr2[0];
+        self.desLbl.text = titleArr2[1];
+    }
     __weak typeof(self) wSelf = self;
     [self.leftBtn setTapActionWithBlock:^{
         if (wSelf.clickLeftBlock) {
@@ -71,7 +75,7 @@
     if (!_titleLbl) {
         _titleLbl = [[UILabel alloc] init];
         _titleLbl.textColor = [UIColor blackColor];
-        _titleLbl.font = [UIFont boldSystemFontOfSize:23];
+        _titleLbl.font = [UIFont boldSystemFontOfSize:22];
         _titleLbl.textAlignment = NSTextAlignmentCenter;
         _titleLbl.numberOfLines = 0;
     }

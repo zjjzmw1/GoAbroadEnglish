@@ -137,6 +137,11 @@
             strEN = titleArr[0];
             strCH = titleArr[1];
         }
+        NSArray *titleArr2 = [str componentsSeparatedByString:@"\n\n"];
+        if (titleArr2.count > 1) {
+            strEN = titleArr2[0];
+            strCH = titleArr2[1];
+        }
         [cell reloadData:indexPath.row selectRow:[XMSoundManager sharedInstance].currentRow title:self.dataArr[indexPath.row]];
         __weak typeof(self) wSelf = self;
         cell.clickLeftBlock = ^{
@@ -167,6 +172,11 @@
             strEN = titleArr[0];
             strCH = titleArr[1];
         }
+        NSArray *titleArr2 = [str componentsSeparatedByString:@"\n\n"];
+        if (titleArr2.count > 1) {
+            strEN = titleArr2[0];
+            strCH = titleArr2[1];
+        }
         [XMSoundManager playText:strCH voiceLanguage:@"zh-CN" row:indexPath.row];
         cell.desLbl.alpha = 1.0;
         [XMSoundManager sharedInstance].speechSyn.delegate = self;
@@ -177,30 +187,6 @@
 
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance {
     NSLog(@"播放完成===%ld",(long)[XMSoundManager sharedInstance].currentRow);
-//    NSInteger newRow = [XMSoundManager sharedInstance].currentRow;
-//    if (self.isChinese == NO) { // 播放当前行的中文
-//        NSString *lastStr = self.dataArr[newRow];
-//        NSArray *chineseArr = [lastStr componentsSeparatedByString:@"\n"];
-//        if (chineseArr.count > 1) {
-//            lastStr = chineseArr[1];
-//        }
-//        self.isChinese = YES;
-//        [XMSoundManager playText:lastStr voiceLanguage:@"zh" row:newRow];
-//    } else { // 播放下一行的英文
-//        [XMSoundManager sharedInstance].currentRow += 1;
-//        newRow = [XMSoundManager sharedInstance].currentRow;
-//        if (newRow >= self.dataArr.count) {
-//            return;
-//        }
-//        NSString *lastStr = self.dataArr[newRow];
-//        NSArray *enArr = [lastStr componentsSeparatedByString:@"\n"];
-//        if (enArr.count > 1) {
-//            lastStr = enArr[0];
-//        }
-//        self.isChinese = NO;
-//        [XMSoundManager playText:lastStr voiceLanguage:@"en-US" row:newRow];
-//    }
-//    [self.tableView reloadData];
 }
 
 - (UITableView *)tableView {

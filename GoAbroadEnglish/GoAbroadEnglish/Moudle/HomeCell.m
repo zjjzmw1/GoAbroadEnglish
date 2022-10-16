@@ -56,6 +56,11 @@
         self.titleLbl.text = titleArr[0];
         self.desLbl.text = titleArr[1];
     }
+    NSArray *titleArr2 = [titleString componentsSeparatedByString:@"\n\n"];
+    if (titleArr2.count > 1) {
+        self.titleLbl.text = titleArr2[0];
+        self.desLbl.text = titleArr2[1];
+    }
     if (currentRow % 2 == 0) {
         self.contentView.backgroundColor = [UIColor whiteColor];
     } else {

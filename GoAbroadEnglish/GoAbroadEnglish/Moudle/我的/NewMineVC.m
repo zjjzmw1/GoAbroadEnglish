@@ -38,7 +38,7 @@
     self.textV = [[XMTextView alloc] init];
     [self.view addSubview:self.textV];
     
-    self.textV.frame = CGRectMake(0, kNaviStatusBarH_XM, kScreenWidth_XM, 200);
+    self.textV.frame = CGRectMake(0, kNaviStatusBarH_XM, kScreenWidth_XM, 300);
     self.textV.backgroundColor = [UIColor yellowColor];
     self.textV.font = [UIFont boldSystemFontOfSize:20];
     self.textV.textAlignment = NSTextAlignmentCenter;
