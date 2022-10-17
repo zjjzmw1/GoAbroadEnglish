@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		27B41B15449DC8051249FB01 /* Pods_GoAbroadEnglish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D714A5DC7DC5853D6FA9E9B /* Pods_GoAbroadEnglish.framework */; };
+		BD1ED2FA28FE1C6700B1819F /* ImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1ED2F928FE1C6700B1819F /* ImageVC.m */; };
+		BD1ED2FD28FE1D1100B1819F /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1ED2FC28FE1D1100B1819F /* ImageCell.m */; };
 		BD26981728F11AC2008BBB78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD26981628F11AC2008BBB78 /* AppDelegate.m */; };
 		BD26981D28F11AC2008BBB78 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD26981C28F11AC2008BBB78 /* ViewController.m */; };
 		BD26982028F11AC2008BBB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD26981E28F11AC2008BBB78 /* Main.storyboard */; };
@@ -75,6 +77,10 @@
 /* Begin PBXFileReference section */
 		2C54893FD4C0D6E8DC951C70 /* Pods-GoAbroadEnglish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoAbroadEnglish.debug.xcconfig"; path = "Target Support Files/Pods-GoAbroadEnglish/Pods-GoAbroadEnglish.debug.xcconfig"; sourceTree = "<group>"; };
 		4D714A5DC7DC5853D6FA9E9B /* Pods_GoAbroadEnglish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoAbroadEnglish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD1ED2F828FE1C6700B1819F /* ImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageVC.h; sourceTree = "<group>"; };
+		BD1ED2F928FE1C6700B1819F /* ImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageVC.m; sourceTree = "<group>"; };
+		BD1ED2FB28FE1D1100B1819F /* ImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
+		BD1ED2FC28FE1D1100B1819F /* ImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
 		BD26981228F11AC2008BBB78 /* GoAbroadEnglish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoAbroadEnglish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD26981528F11AC2008BBB78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BD26981628F11AC2008BBB78 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -230,6 +236,17 @@
 				D623E5916CF49FF74D8C80E2 /* Pods-GoAbroadEnglish.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BD1ED2F728FE1C4800B1819F /* ImageVC */ = {
+			isa = PBXGroup;
+			children = (
+				BD1ED2F828FE1C6700B1819F /* ImageVC.h */,
+				BD1ED2F928FE1C6700B1819F /* ImageVC.m */,
+				BD1ED2FB28FE1D1100B1819F /* ImageCell.h */,
+				BD1ED2FC28FE1D1100B1819F /* ImageCell.m */,
+			);
+			path = ImageVC;
 			sourceTree = "<group>";
 		};
 		BD26980928F11AC1008BBB78 = {
@@ -682,6 +699,7 @@
 				BD26981C28F11AC2008BBB78 /* ViewController.m */,
 				BDB4FA8A28F84FA70073DA12 /* HomeCell.h */,
 				BDB4FA8B28F84FA70073DA12 /* HomeCell.m */,
+				BD1ED2F728FE1C4800B1819F /* ImageVC */,
 				BDD42D1B28FA51CE008B7CAE /* 用户数据信息 */,
 				BD2698E728F1231C008BBB78 /* 我的 */,
 				BD2698E628F122EA008BBB78 /* 收藏 */,
@@ -857,6 +875,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDB4FA8C28F84FA70073DA12 /* HomeCell.m in Sources */,
+				BD1ED2FD28FE1D1100B1819F /* ImageCell.m in Sources */,
 				BD2698CF28F11B0A008BBB78 /* XMAlertView.m in Sources */,
 				BD2698D428F11B0A008BBB78 /* NSString+XMValid.m in Sources */,
 				BD2698ED28F12367008BBB78 /* StudyVC.m in Sources */,
@@ -867,6 +886,7 @@
 				BD2698C928F11B0A008BBB78 /* XMSignView.m in Sources */,
 				BD2698CD28F11B0A008BBB78 /* XMEmptyView.m in Sources */,
 				BD2698C228F11B0A008BBB78 /* XMProgressBarView.m in Sources */,
+				BD1ED2FA28FE1C6700B1819F /* ImageVC.m in Sources */,
 				BD2698DD28F11B0A008BBB78 /* XMCustomNaviView.m in Sources */,
 				BD2698D328F11B0A008BBB78 /* NSString+XMBusiness.m in Sources */,
 				BD2698CB28F11B0A008BBB78 /* XMCircleGradientProgressView.m in Sources */,
@@ -1063,6 +1083,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoAbroadEnglish/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "出国英语";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "添加图片";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "保持相册";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1095,6 +1117,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoAbroadEnglish/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "出国英语";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "添加图片";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "保持相册";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
